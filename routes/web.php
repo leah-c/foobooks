@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*
 Route::get('/books/{title?}', function ($title) {
   if isset('$title')
     return 'your requested book: '.$title;
@@ -47,3 +47,4 @@ Route::get('/books/destroy', function () {
 Route::get('/books/show', function () {
     return 'showing book';
 })-> name('books.show');;
+*/
