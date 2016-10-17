@@ -17,6 +17,15 @@ Route::get('/', function () {
 
 Route::get('/books', function () {
     return 'view book library';
+})->name('books.index');
+
+# Process form to add a new book
+Route::post('/books', function() {
+
+})->name('books.store');
+
+Route::get('/books/show/{title}', function($title) {
+    return 'Results for the book: '.$title;
 });
 
 Route::get('/books/create', function () {
