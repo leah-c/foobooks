@@ -21,7 +21,7 @@ Route::get('/books/create', function () {
 })-> name('books.show');
 
 Route::get('/books/destroy', function () {
-    return 'deleted book';s
+    return 'deleted book';
 });
 
 
