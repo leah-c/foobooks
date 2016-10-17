@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books', function () {
+Route::get('/books/{title?}', function ($title) {
+  if ($title is not null)
+    return 'your requested book: '.$title;
+  else
     return 'view book library';
+  
 })->name('books.index');
 
 # Process form to add a new book
