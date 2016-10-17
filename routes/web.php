@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-/*
+
 Route::get('/books/{title?}', function ($title) {
   if isset('$title')
     return 'your requested book: '.$title;
@@ -22,7 +22,7 @@ Route::get('/books/{title?}', function ($title) {
     return 'view book library';
 
 })->name('books.index');
-
+/*
 # Process form to add a new book
 Route::post('/books', function() {
 
