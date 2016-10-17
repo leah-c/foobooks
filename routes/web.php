@@ -18,4 +18,13 @@ Route::get('/', function () {
 
 Route::get('/books/create', function () {
     return 'created book';
+})-> name('books.show');
+
+Route::get('/books/destroy', function () {
+    return 'deleted book';s
+});
+
+
+Route::get('/books/show', function () {
+    return 'showing book';
 });
