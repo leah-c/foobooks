@@ -16,11 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/books/{title?}', function ($title) {
-  if isset($title)
+  if isset('$title')
     return 'your requested book: '.$title;
   else
     return 'view book library';
-  
+
 })->name('books.index');
 
 # Process form to add a new book
@@ -29,7 +29,10 @@ Route::post('/books', function() {
 })->name('books.store');
 
 Route::get('/books/show/{title}', function($title) {
-    return 'Results for the book: '.$title;
+  if isset('$title')
+    return 'your requested book: '.$title;
+  else
+    return 'view book library';
 });
 
 Route::get('/books/create', function () {
