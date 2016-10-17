@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/books', function () {
-    return 'view book library');
+    return 'view book library';
 });
 
 Route::get('/books/create', function () {
