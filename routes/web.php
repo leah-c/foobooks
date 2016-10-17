@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/books/{title?}', function ($title) {
-  if isset($title)
+  if (!empty($title))
     return 'your requested book: '.$title;
   else
     return 'view book library';
