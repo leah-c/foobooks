@@ -15,16 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/books', function () {
+    return 'view book library');
+});
 
 Route::get('/books/create', function () {
     return 'created book';
-})-> name('books.show');
+})-> name('books.create');
 
 Route::get('/books/destroy', function () {
     return 'deleted book';
-});
+})-> name('books.destroy');;
 
 
 Route::get('/books/show', function () {
     return 'showing book';
-});
+})-> name('books.show');;
