@@ -17,15 +17,9 @@ Route::get('/', function () {
 
 Route::get('/books/', function () {
     return 'view book library';
-})->name('books.index');
-
-Route::get('/books/{title?}', function ($title) {
-  if (!empty($title))
-    return 'your requested book: '.$title;
-  else
-    return 'view book library';
-
 });
+
+
 /*
 # Process form to add a new book
 Route::post('/books', function() {
