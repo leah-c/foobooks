@@ -51,10 +51,12 @@ Route::post('/books/create', function () {
     return "Processed.";
 });
 
+Route::get('/books/show/{title?}', 'BookController@show')->name('book.show');
 
-Route::get('/books/show/{title?}', function($title =''){
+/*Route::get('/books/show/{title?}', function($title =''){
   if ($title == ''){
     return 'You did not include a title.';
   }
   return 'You requested the book: ' .$title;
-})->name('books.show');
+})->name('book.show');
+*/
