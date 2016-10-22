@@ -13,36 +13,41 @@
 
 Route::get('/', function () {
     return view('welcome');
+
 });
 
-Route::get('/books/', function () {
-    return 'view book library';
-});
-
-
+#old way
 /*
-# Process form to add a new book
-Route::post('/books', function() {
+Route::get('/books', function () {
+    return 'Here are all the books';
 
-})->name('books.store');
+});
+*/
 
-Route::get('/books/show/{title}', function($title) {
-  if isset('$title')
-    return 'your requested book: '.$title;
-  else
-    return 'view book library';
+#connect the route to the logic (controller aka resource controller)
+Route::get('/books', 'BookController@index');
+
+#do not include html code in routes file
+#when initially typing in URL, will use this route
+Route::get('/books/create', function () {
+    $view = '<form method = "POST" action = "/books/create">';
+    $view .= csrf_field(); # This will be explained more later
+    $view .=  '<label>Book Title: <input type = "text" name ="book title">';
+    $view .=  '<input type = "submit">';
+    $view .= '</form>';
+
+    return $view;
 });
 
-Route::get('/books/create', function () {
-    return 'created book';
-})-> name('books.create');
-
-Route::get('/books/destroy', function () {
-    return 'deleted book';
-})-> name('books.destroy');;
+#once you enter text in form field will be directed to this route
+Route::post('/books/create', function () {
+    return "Processed.";
+});
 
 
-Route::get('/books/show', function () {
-    return 'showing book';
-})-> name('books.show');;
-*/
+Route::get('/books/show/{title?}', function($title =''){
+  if ($title == ''){
+    return 'You did not include a title.';
+  }
+  return 'You requested the book: ' .$title;
+})->name('books.show');
