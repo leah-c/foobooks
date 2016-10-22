@@ -16,6 +16,13 @@ Route::get('/', function () {
 
 });
 
+Route::get('/random', function() {
+
+    $random = new Rych\Random\Random();
+    return $random->getRandomString(8);
+
+});
+
 #old way
 /*
 Route::get('/books', function () {
