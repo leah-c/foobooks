@@ -53,7 +53,7 @@ class BookController extends Controller
           return 'You did not include a title.';
         }
         //return 'You requested the book: ' .$title;
-        return view ('book.show')->with('title', $title);
+        return view('book.show')->with('title', $title);
     }
 
     /**
